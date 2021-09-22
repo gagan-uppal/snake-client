@@ -17,7 +17,14 @@ const connect = function () {
  
   conn.on('connect', () => {
     console.log("Connected to SERVER!");
-    conn.write("Name: Gag");
+    conn.write("Name: mee");
+    conn.write("Move: left");
+    conn.write("Move: left");
+    conn.write("Move: right");
+    conn.write("Move: up");
+    conn.write("Move: up");
+
+
   });
 
   conn.on('data', (data) => {
