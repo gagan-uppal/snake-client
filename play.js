@@ -29,9 +29,8 @@
   return conn;
 };*/
 
-const { connect } = require('./client');
 
-const setupInput = function () {
+/*const setupInput = function () {
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding("utf8");
@@ -39,14 +38,24 @@ const setupInput = function () {
   stdin.on("data", handleUserInput);
 
   return stdin;
-};
+};*/
 //console.log("Connecting ...");
-connect();
+const { connect } = require("./client");
+const { setupInput } = require("./input");
 
-const handleUserInput = function () {
+const connection = connect();
+
+console.log("Connecting ...");
+//connect();
+setupInput(connection);
+
+//setupInput(connect());
+
+/*const handleUserInput = function () {
   // your code here
    if (key === '\u0003') {
     process.exit();
   
 }
-};
+};*/
+//module.exports = { connect };
